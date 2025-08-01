@@ -21,18 +21,20 @@ The design must:
 
 ## UI Preview
 
-### Desktop View
-![Desktop UI](./screenshots/desktop-view.png)
+![Desktop UI](./assets/html1.png)
+![Desktop UI](./assets/html2.png)
+![Desktop UI](./assets/html3.png)
+![Desktop UI](./assets/html4.png)
 
-### Mobile View
-![Mobile UI](./screenshots/mobile-view.png)
+
+
 
 
 ## Code Output Preview
 
-Output view after opening `index.html`:
 
-![Output Screenshot](./screenshots/output.png)
+![Desktop UI](./assets/output1.png)
+![Desktop UI](./assets/output2.png)
 
 ---
 ---
