@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bank Portal</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #1c1c1c;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(8px);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      text-align: center;
+      margin: 0;
+    }
+
+    .title {
+      color: #8b0000;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .amount {
+      margin-top: 10px;
+      font-size: 20px;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      border: 1px solid #000;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      padding: 8px 20px;
+      font-size: 14px;
+      border: none;
+      border-radius: 999px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .deposit {
+      background-color: #b22222;
+    }
+
+    .withdraw {
+      background-color: #b8860b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="title">Bank Portal</h1>
+    <h1 class="amount">Amount: $<span id="amount">0.00</span></h1>
+
+    <form id="bankForm">
+      <input type="number" id="inputValue" placeholder="Enter amount" required />
+      <div class="buttons">
+        <button class="btn deposit" type="button" onclick="handleDeposit()">Deposit</button>
+        <button class="btn withdraw" type="button" onclick="handleWithdraw()">Withdraw</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    let amount = 0;
+
+    function updateAmountDisplay() {
+      document.getElementById('amount').textContent = amount.toFixed(2);
+    }
+
+    function handleDeposit() {
+      const input = document.getElementById('inputValue');
+      const value = parseFloat(input.value);
+      if (!isNaN(value) && value > 0) {
+        amount += value;
+        updateAmountDisplay();
+        input.value = '';
+      }
+    }
+
+    function handleWithdraw() {
+      const input = document.getElementById('inputValue');
+      const value = parseFloat(input.value);
+      if (!isNaN(value) && value > 0 && value <= amount) {
+        amount -= value;
+        updateAmountDisplay();
+        input.value = '';
+      }
+    }
+  </script>
+
+</body>
+</html>
